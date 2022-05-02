@@ -7,9 +7,15 @@ import hello.hellospring.respository.MemoryMemberRepository;
 import java.util.List;
 import java.util.Optional;
 
-public class MemberService {
+public class MemberService { // 단축키 : ctrl + shift + t (테스트 코드 바로 만들어짐)
 
-    private final MemberRepository memberRepository = new MemoryMemberRepository();
+    private final MemberRepository memberRepository;
+
+    // Constructor 단축키 : alt + insert
+    // repository를 외부에서 넣어준다.
+    public MemberService(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }
 
     // 회원가입
     public Long signup(Member member) {
